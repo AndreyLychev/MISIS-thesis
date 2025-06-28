@@ -14,7 +14,7 @@
 
 * [Установка TeX Live](https://github.com/AndreyLychev/MISIS-thesis/blob/main/docs/install.md)
 * [Файловая структура шаблона](https://github.com/AndreyLychev/MISIS-thesis/blob/main/docs/structure.md)
-* [Настройка шаблона](dhttps://github.com/AndreyLychev/MISIS-thesis/blob/main/ocs/params.md)
+* [Настройка шаблона](https://github.com/AndreyLychev/MISIS-thesis/blob/main/ocs/params.md)
 * [Пример компиляции шаблона](https://github.com/AndreyLychev/MISIS-thesis/blob/main/samples/thesis_sample)
 
 
