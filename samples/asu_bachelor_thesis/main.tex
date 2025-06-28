@@ -1,0 +1,177 @@
+\documentclass[
+    bachelor,
+    colurls,
+    titleikn
+]{mthesis}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Параметры класса документа
+
+%---------
+% тип ВКР
+%---------
+% bachelor  - бакалаврская диссертация
+% master    - магистерская диссертация
+
+%-------------
+% гиперссылки
+%-------------
+% blackurls - ссылки на литературу, таблицы, рисунки, формулы и т.п.
+%             не выделяются цветом (используется для ч/б печати)
+% colurls   - цветные ссылки (для распространения пояснительной записки 
+%             в электронном виде)
+
+%-----------------------------
+% оформление титульного листа
+%-----------------------------
+% titlestd  - согласно методическим указаниям
+% titleikn  - согласно требованиям ИКН
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Здесь следует размещать допольнительные пакеты и команды. Следующие 
+% пакеты уже загружены в стилевой файл: geometry, amssymb, mathtools, 
+% ifthen, cmap, textcomp, babel, upgreek, indentfirst, xcolor, calc, 
+% tabularray, icomma, ulem, soulutf8, tikz, hyperref, graphicx, 
+% caption, subcaption, pdfpages, aliascnt, totalcount, totcount, 
+% totpages, placeins, enumitem, biblatex, fancyvrb, listings
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Информация для заполнения титульного листа и задания на ВКР
+
+% ФИО студента
+\AuthorShortName{Анисимова Н.С.}
+\AuthorFullName{Анисимова Надежда Сергеевна} % полностью
+\AuthorFullNameGen{Анисимовой Надежды Сергеевны} % полностью в родительном падеже
+% Номер группы
+\AuthorGroup{БИВТ-21-17}
+
+% Тема работы
+\ThesisTitle{Разработка системы для автоматизации процесса генерации предмета одежды на заказчика с использованием диффузионных генеративных моделей искусственного интеллекта}
+
+% Научный руководитель
+\SupervisorShort{Антонов М.О.}
+\SupervisorFull{Антонов Михаил Олегович}
+\SupervisorDegree{Ассистент кафедры АСУ}
+
+% Нормоконтроль
+\GOSTComplianceReviewer{Антонов М.О.}
+% Проверка на заимствования
+\PlagiarismChecker{Агабубаев А.Т.}
+
+% Название кафедры, ФИО зав. кафедрой
+\DeptShort{АСУ}
+\DeptFull{АВТОМАТИЗИРОВАННЫХ СИСТЕМ УПРАВЛЕНИЯ}
+\DeptHead{Темкин И.О.}
+
+% Название института, ФИО директора
+\InstShort{ИТКН}
+\InstFull{ИНФОРМАЦИОННЫХ ТЕХНОЛОГИЙ И КОМПЬЮТЕРНЫХ НАУК}
+\InstHead{Солодов С.В.}
+
+% Шифр специальности, краткое и полное наименование специальности
+\SpecShort{09.03.01 ИВТ}
+\SpecFull{09.03.01 ИНФОРМАТИКА И ВЫЧИСЛИТЕЛЬНАЯ ТЕХНИКА}
+
+% Место и год выполнения работы
+\City{Москва}
+\Year{2025}
+
+% Цель работы
+\ThesisPurpose{}
+
+% Исходные данные
+\ThesisData{}
+ 
+% Основная литература, в том числе:
+% Монографии, учебники и т.п.
+\ThesisBooks{}
+
+% Отчеты по НИР, диссертации, дипломные работы и т.п.
+\ThesisReports{}
+
+% Периодическая литература (журналы)
+\ThesisJournals{}
+
+% Справочники и методическая литература (в том числе литература 
+% по методам обработки экспериментальных данных)
+\ThesisManuals{}
+
+% Перечень основных этапов исследования и форма промежуточной 
+% отчётности по каждому этапу
+\ThesisStages{}
+
+% Аппаратура и методики, которые должны быть использованы в работе
+\ThesisEquipment{}
+
+% Использование ЭВМ
+\ThesisComputer{}
+
+% Перечень (примерный) основных вопросов, которые должны быть 
+% рассмотрены и проанализированы в литературном обзоре
+\ThesisLitReview{}
+
+% Перечень (примерный) графического и иллюстрированного материала
+\IllustrMaterials{}
+
+% Дата выдачи задания
+\DateAssignment{}
+
+% Дата утверждения задания (должна быть не раньше даты выдачи задания)
+\DateApproval{}
+
+\begin{document}
+
+% Реферат
+\include{thesis_chapters/0_abstract/abstract}
+
+\newpage
+% Содержание
+\ifdefmacro{\microtypesetup}{\microtypesetup{protrusion=false}}{}
+\tableofcontents*
+\ifdefmacro{\microtypesetup}{\microtypesetup{protrusion=true}}{}
+
+% Введение
+\include{thesis_chapters/1_introduction/introduction}
+
+% Обзор НТИ
+\include{thesis_chapters/2_nti_overview/nti_overview.tex}
+
+% Research object analysis
+\include{thesis_chapters/3_research_obj_analysis/research_obj_analysis.tex}
+
+% Software analysis
+\include{thesis_chapters/4_software_analysis/software_analysis.tex}
+
+%Problem statement
+\include{thesis_chapters/5_problem_statement/problem_statement.tex}
+
+%Problem solution
+\include{thesis_chapters/6_problem_solution/problem_solution.tex}
+
+%Solution model
+\include{thesis_chapters/7_solution_model/solution_model.tex}
+
+%Solution algorithm
+\include{thesis_chapters/8_solution_algorithm/solution_algorithm.tex}
+
+%Program implementation
+\include{thesis_chapters/9_program_implementation/program_implementation.tex}
+
+%Results
+\include{thesis_chapters/10_results/results.tex}
+
+%Conclution
+\include{thesis_chapters/11_conclution/conclution.tex}
+
+% Список литературы
+\clearpage
+\urlstyle{rm}                               % ссылки URL обычным шрифтом
+\ifdefmacro{\microtypesetup}{\microtypesetup{protrusion=false}}{}
+\insertbibliofull
+\ifdefmacro{\microtypesetup}{\microtypesetup{protrusion=true}}{}
+\urlstyle{tt}                               % возвращаем установки шрифта ссылок URL
+
+\end{document}

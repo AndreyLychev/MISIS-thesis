@@ -1,0 +1,350 @@
+\chapter{Оформление различных элементов}\label{ch:ch1}
+
+\section{Форматирование текста}\label{sec:ch1/sec1}
+
+Предложение может содержать \textbf{полужирный текст} и \textit{курсив}. 
+Сочетать \textit{\textbf{полужирное начертание и~курсив}}
+крайне не рекомендуется.
+Запрещается использовать \uline{подчёркивание}. 
+
+
+\section{Списки}\label{sec:ch1/sec2}
+
+\noindent Нумерованный список:
+\begin{enumerate}
+    \item Первый пункт.
+    \item Второй пункт.
+    \item Третий пункт.
+\end{enumerate}
+
+\noindent Пример маркированного списка:
+\begin{itemize}
+    \item пункт первый;
+    \item пункт второй;
+    \item пункт третий.
+\end{itemize}
+
+\noindent Вложенные списки:
+\begin{itemize}
+    \item Имеется маркированный список.
+          \begin{enumerate}
+              \item В нём лежит нумерованный список,
+              \item в котором
+                    \begin{itemize}
+                        \item лежит ещё один маркированный список.
+                    \end{itemize}
+          \end{enumerate}
+\end{itemize}
+
+\noindent Нумерованный вложенный список:
+\begin{enumerate}
+    \item пункт первый;
+    \item пункт второй:
+    \begin{enumerate}
+            \item Учитывая ключевые сценарии поведения, 
+            высокотехнологичная концепция общественного уклада играет 
+            определяющее значение для соответствующих условий 
+            активизации:
+            \begin{enumerate}
+                \item третий;
+                \item уровень;
+                \item вложенности.
+            \end{enumerate}
+            \item второй подпункт;
+        \end{enumerate}
+    \item пункт третий:
+        \begin{enumerate}
+            \item второй;
+            \item уровень;
+            \item вложенности.
+        \end{enumerate}
+\end{enumerate}
+
+
+\section{Ссылки на литературу}\label{sec:ch1/sec3}
+
+Ниже приведены примеры ссылок на 
+\begin{itemize}
+  \item книги: \cite{Sychev,Sokolov,Gaidaenko},
+  \item многотомные издания: \cite{Lermontov,Russell},
+
+  \item статьи: \cite{Berestova,Janiesch},
+  \item труды конференций: \cite{Conference},
+  \item препринты: \cite{arXiv,arXiv2},
+
+  \item электронные ресурсы: \cite{Encyclopedia,Nasirova},
+  \item диссертации: \cite{Lagkueva,Pokrovski,Belozerov},
+  \item авторефераты диссертаций: \cite{Sirotko,Lukina},
+  \item патенты: \cite{patent2,patent3,patbib1},
+  \item свидетельство о регистрации программы для ЭВМ: \cite{progbib1},
+  \item нормативные правовые акты: \cite{Constitution,FamilyCode},
+  \item стандарты: \cite{Gost.7.0.53,standard3},
+  \item депонированные научные работы: \cite{Razumovski},
+  \item отчёты о научно-исследовательской работе: \cite{Methodology}.
+\end{itemize}
+
+Ссылки с использованием дополнительных опций biblatex: \cite{sobenin_kdv,initials}.
+
+Ссылки с указанием страниц: \cite[с.~54]{Sokolov}\cite[с.~36]{Gaidaenko}.
+
+
+\section{Ссылки на формулы, таблицы, рисунки и~т.\,п.}\label{sec:ch1/sec4}
+
+Ссылки на приложения: Приложение~\ref{app:A}, Приложение~\ref{app:C1}.
+
+Ссылка на формулу: формула~\eqref{eq:equation1}.
+
+Ссылка на изображение: рисунок~\ref{fig:2}.
+
+Общепринятым является добавление к ссылкам префикса, характеризующего 
+тип элемента. Это не является строгим требованием, но~позволяет лучше 
+ориентироваться в документах большого размера.
+Например, для ссылок на~рисунки используется префикс \texttt{fig},
+для ссылки на~таблицу "--- \texttt{tab}.
+Например, \verb+\label{fig:example}+; \verb+\ref{tab:test1}+; \verb+label={lst:external1}+.
+В~таблице \ref{tab:stand_pref} приведены стандартные префиксы для 
+различных типов ссылок.
+
+\begin{table}[htbp]
+    \centering
+    \caption{Стандартные префиксы ссылок}
+    \label{tab:stand_pref}
+    \begin{tblr}{colspec={ll},
+                row{1} = {font=\bfseries},
+                hline{2}={1}{-}{},
+                hline{2}={2}{-}{},
+                hline{1,Z}={solid},
+                vlines,vline{1,3}={abovepos=1,belowpos=1},
+                }
+        Элемент           & Префикс \\
+        Глава             & ch:     \\
+        Секция            & sec:    \\
+        Подсекция         & subsec: \\
+        Рисунок           & fig:    \\
+        Таблица           & tab:    \\
+        Уравнение         & eq:     \\
+        Листинг программы & lst:    \\
+        Элемент списка    & itm:    \\
+        Алгоритм          & alg:    \\
+        Секция приложения & app:    \\
+    \end{tblr}
+\end{table}
+
+Для упорядочивания ссылок можно использовать разделительные символы.
+Например, \verb+\label{fig:schemes/my_scheme}+ 
+или \\ \verb+\label{lst:dts/linked_list}+.
+
+
+
+
+\section{Набор формул}\label{sec:ch1/sec5}
+
+\subsection{Ненумерованные одиночные формулы}\label{subsec:ch1/sec5/sub1}
+
+Для добавления формул можно использовать пары \verb+$+\dots\verb+$+ 
+и \verb+$$+\dots\verb+$$+, но~они считаются устаревшими.
+Лучше использовать их функциональные аналоги \verb+\(+\dots\verb+\)+ 
+и \verb+\[+\dots\verb+\]+.
+
+Пример внутритекстовой формулы \(x \approx \sin x\), то есть формулы,
+которая располагается непосредственно в~тексте.
+
+Пример выключной формулы:
+\[
+    (x_1+x_2)^2 = x_1^2 + 2 x_1 x_2 + x_2^2
+\]
+
+Согласно русской типографской традиции в стилевом файле используется
+прямое начертание греческих букв:
+\[
+    \alpha\beta\gamma\delta\epsilon\epsilon\zeta\eta\theta%
+    \vartheta\iota\kappa\varkappa\lambda\mu\nu\xi\pi\varpi\rho\varrho%
+    \sigma\varsigma\tau\upsilon\phi\phi\chi\psi\omega\Gamma\Delta%
+    \Theta\Lambda\Xi\Pi\Sigma\Upsilon\Phi\Psi\Omega
+\]
+\[
+    \boldsymbol{\alpha\beta\gamma\delta\epsilon\epsilon\zeta\eta%
+        \theta\vartheta\iota\kappa\varkappa\lambda\mu\nu\xi\pi\varpi\rho%
+        \varrho\sigma\varsigma\tau\upsilon\phi\phi\chi\psi\omega\Gamma%
+        \Delta\Theta\Lambda\Xi\Pi\Sigma\Upsilon\Phi\Psi\Omega}
+\]
+
+В формулах можно использовать разные математические алфавиты:
+\begin{align*}
+    \mathcal{ABCDEFGHIJKLMNOPQRSTUVWXYZ} \\
+    \mathfrak{ABCDEFGHIJKLMNOPQRSTUVWXYZ} \\
+    \mathbb{ABCDEFGHIJKLMNOPQRSTUVWXYZ}
+\end{align*}
+
+
+
+\subsection{Многострочные формулы}\label{sub:ch1/sec5/sub2}
+
+Вот так можно написать несколько формул, которые выровнены по
+знаку равенства:
+\begin{align*}
+    f(E,T) & = \frac{1}{e^{\frac{E - E_F}{kT}} - 1}, \\
+    f(E,T) & = \frac{1}{e^{\frac{E - E_F}{kT}} + 1}.
+\end{align*}
+
+Выровнять систему ещё и по переменной \( x \) можно, используя окружение
+\verb|alignedat| из пакета \verb|amsmath|. Вот так:
+\[
+|x| = \left\{
+        \begin{alignedat}{2}
+            & &x, \quad & \text{eсли } x \geq 0 \\
+            &-&x, \quad & \text{eсли } x < 0
+        \end{alignedat}
+    \right.
+\]
+Здесь первый амперсанд (в исходном \LaTeX\ описании формулы) означает
+выравнивание по~левому краю, второй "--- по~\( x \), а~третий "--- по~слову
+<<если>>. Команда \verb|\quad| делает большой горизонтальный пробел.
+
+
+Для вёрстки простых матриц удобно окружение \texttt{pmatrix}:
+\[
+\begin{pmatrix}
+    a_{11} & \ldots & a_{1n} \\
+    \vdots & \ddots & \vdots \\
+    a_{n1} & \ldots & a_{nn}
+\end{pmatrix}
+\]
+
+Для более сложных матриц лучше использовать пакет \texttt{nicematrix}.
+Ниже приведено несколько примеров, взятых из документации к этому пакету.
+\[
+\begin{pNiceMatrix}[first-row,first-col,columns-width=7mm,
+                    code-for-first-col=\scriptstyle\color{red},
+                    code-for-first-row=\scriptstyle\color{blue}]
+       & C_1    & C_2    & \Cdots & C_n    \\
+L_1    & a_{11} & a_{12} & \Cdots & a_{1n} \\
+L_2    & a_{21} & a_{22} & \Cdots & a_{2n} \\
+\Vdots & \Vdots & \Vdots & \Ddots & \Vdots \\
+L_n    & a_{n1} & a_{n2} & \Cdots & a_{nn} \\
+\end{pNiceMatrix}
+\]
+
+\[
+B = \begin{bNiceMatrix}[margin,hvlines,columns-width=5mm]
+\Block{3-3}<\Large>{A} & & & 0 \\
+& \hspace*{1cm} & & \Vdots \\
+& & & 0 \\
+0 & \Cdots& 0 & 0
+\end{bNiceMatrix}
+\]
+
+\[
+\begin{pNiceArray}{*6c|c}[columns-width=auto,last-col,code-for-last-col=\scriptstyle]
+1 & 1 & 1 &\Cdots & & 1 & 0 & \\
+0 & 1 & 0 &\Cdots & & 0 & & L_2 \gets L_2-L_1 \\
+0 & 0 & 1 &\Ddots & & \Vdots & & L_3 \gets L_3-L_1 \\
+& & &\Ddots & & & \Vdots & \Vdots \\
+\Vdots & & &\Ddots & & 0 & \\
+0 & & &\Cdots & 0 & 1 & 0 & L_n \gets L_n-L_1
+\end{pNiceArray}
+\]
+
+
+
+
+\subsection{Нумерованные формулы}\label{subsec:ch1/sec5/sub3}
+
+Пример нумерованной формулы:
+\begin{equation}\label{eq:equation1}
+    e = \lim_{n \to \infty} \left( 1 + \frac{1}{n} \right)^n
+\end{equation}
+
+Ссылка на формулу~\eqref{eq:equation1}.
+
+Для нумерованных формул \verb|aligned| делает вертикальное
+выравнивание номера формулы по центру формулы:
+\begin{equation}\label{eq:2}
+    \begin{aligned}
+        j &= - D \nabla c, \\
+        \frac{\partial c}{\partial t} &= \nabla( D \nabla c)
+    \end{aligned}
+\end{equation}
+
+Для длинной формулы, которая не помещается на одной строке можно использовать
+окружение \verb|multline|.
+\begin{multline}\label{eq:equation31}
+    1 + 2 + 3 + 4 + 5 + 6 + 7 + \dots + \\
+    + 50 + 51 + 52 + 53 + 54 + 55 + 56 + 57 + \dots + \\
+    + 96 + 97 + 98 + 99 + 100 = 5050
+\end{multline}
+
+Сделать так, чтобы номер формулы стоял напротив средней строки, можно,
+используя окружение \verb|multlined| вместо \verb|multline| 
+внутри окружения \verb|equation|. Результат получается вот такой:
+\begin{equation}\label{eq:equation3}
+    \begin{multlined}
+        1 + 2 + 3 + 4 + 5 + 6 + 7 + \dots + \\
+        + 50 + 51 + 52 + 53 + 54 + 55 + 56 + 57 + \dots + \\
+        + 96 + 97 + 98 + 99 + 100 = 5050
+    \end{multlined}
+\end{equation}
+
+Уравнение~\eqref{eq:subeq_1} демонстрирует возможности
+окружения \verb|\subequations|.
+\begin{subequations}
+    \label{eq:subeq_1}
+    \begin{gather}
+        y = x^2 + 1 \label{eq:subeq_1-1} \\
+        y = 2 x^2 - x + 1 \label{eq:subeq_1-2}
+    \end{gather}
+\end{subequations}
+
+Ссылки на отдельные уравнения~\eqref{eq:subeq_1-1} и~\eqref{eq:subeq_1-2}.
+
+Пример формулы с пояснением значений символов. Их приводят 
+непосредственно после формулы, на следующей строке, в той же 
+последовательности, в~которой они присутствуют в~формуле:
+\[
+\rho = \frac{m}{V},
+\]
+\where{%
+    $\rho$ "--- плотность образца, $\text{г}/\text{см}^3$; \\
+    $m$ "--- масса образца, г; \\
+    $V$ "--- объём образца, $\text{см}^3$.}
+
+Ещё один пример формулы с~пояснением. 
+Статистическая мера $\operatorname{tf-idf}$ рассчитывается 
+следующим образом:
+\begin{equation}\label{eq:tf-idf}
+\operatorname{tf-idf}(t, D) = \operatorname{tf}(t, D) \cdot \operatorname{idf}(t),
+\end{equation}
+\where{%
+    $t$ "---  термин из поискового запроса; \\
+    $D$ "--- документ; \\
+    $\operatorname{tf}(t, D)$ "--- отношение числа вхождений термина $t$ к общему числу слов документа~$D$; \\
+    $\operatorname{idf}(t)$ "--- инверсия частоты, с которой термин $t$ встречается в документах коллекции.
+}
+
+
+
+
+
+\subsection{Заголовки с формулами: \texorpdfstring{\(a^2 + b^2 = c^2\)}{%
+        a\texttwosuperior\ + b\texttwosuperior\ = c\texttwosuperior},
+    \texorpdfstring{\(\left\vert\textrm{{Im}}\Sigma\left(
+            \protect\varepsilon\right)\right\vert\approx const\)}{|ImΣ (ε)| ≈ const},
+    \texorpdfstring{\(\sigma_{xx}^{(1)}\)}{σ\_\{xx\}\textasciicircum\{(1)\}}
+}\label{sub:with_math}
+
+Пакет \texttt{hyperref} берёт текст для закладок в pdf-файле из~аргументов
+команд типа \verb|\section|, которые могут содержать математические формулы,
+а~также изменения цвета текста или шрифта, которые не отображаются в~закладках.
+Чтобы использование формул в заголовках не вызывало в~логе компиляции появление
+предупреждений типа <<\texttt{Token not allowed in~a~PDF string
+    (Unicode):(hyperref) removing...}>>, следует использовать конструкцию
+\verb|\texorpdfstring{}{}|, где в~первых фигурных скобках указывается
+формула, а~во~вторых "--- запись формулы для закладок.
+
+
+
+
+% Данной командой рекомендуется завершать раздел чтобы плавающие объекты
+% (рисунки/таблицы) размещались в конце текущего раздела и не 
+% переносились в начало следующего.
+\FloatBarrier
